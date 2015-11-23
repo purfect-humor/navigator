@@ -3,5 +3,5 @@ from .models import Station
 
 
 def index(request):
-    stat = Station.objects.get(id=1)
-    return render(request, 'website/index.html', locals())
+    # stat = Station.objects.get(id=1)
+    return render(request, 'website/index.html')
