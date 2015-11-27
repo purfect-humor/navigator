@@ -80,7 +80,7 @@ if 'PRODUCTION' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ['navigator'],
+            'NAME': 'navigator',
             'USER': os.environ['OPENSHIFT_POSTGRESQL_DB_USERNAME'],
             'PASSWORD': os.environ['OPENSHIFT_POSTGRESQL_DB_PASSWORD'],
             'HOST': os.environ['OPENSHIFT_POSTGRESQL_DB_HOST'],
