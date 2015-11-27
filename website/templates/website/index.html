@@ -105,6 +105,13 @@
                     map: map,
                     title: "Greetings!"
                 });
+
+                var pos = new google.maps.LatLng("{{ stat.latitude }}", "{{ stat.longitude }}");
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    title: "{{ stat.name }}"
+                });
             }
         });
         </script>
