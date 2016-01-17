@@ -106,11 +106,22 @@
                     title: "Greetings!"
                 });
 
+                /*
                 var pos = new google.maps.LatLng("{{ stat.latitude }}", "{{ stat.longitude }}");
                 var marker = new google.maps.Marker({
                     position: pos,
                     map: map,
                     title: "{{ stat.name }}"
+                });
+                */
+                var statId = Math.floor(Math.random() * 1000);
+                $.getJSON("/getStationById/" + statId, function(res) {
+                  var pos = new google.maps.LatLng(res.latitude, res.longitude);
+                  var marker = new google.maps.Marker({
+                      position: pos,
+                      map: map,
+                      title: res.name
+                  });
                 });
             }
         });
