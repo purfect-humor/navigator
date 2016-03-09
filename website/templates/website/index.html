@@ -6,53 +6,80 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/snap.js/1.9.3/snap.min.css">
         <style>
-        #map-page, #map-canvas { width: 100%; height: 100%; padding: 0; }
-        #map-page { z-index: 1; }
+        #map, #map-canvas, #pages { width: 100%; height: 100%; padding: 0; }
+        #pages, #pages *, #map { z-index: 1; }
+        .ui-input-search { border-radius: 18px; }
         </style>
     </head>
     <body>
         <div class="snap-drawers">
           <div class="snap-drawer snap-drawer-left">
-            <div>
-              <h3>Snap.js</h3>
-              <div class="demo-social">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-text="Snap.js - A Library for creating beautiful mobile shelfs in Javascript" data-url="http://jakiestfu.github.com/Snap.js/" data-count="none" data-via="jakiestfu">Tweet</a>
-                <a href="https://twitter.com/jakiestfu" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @jakiestfu</a>
-                <iframe src="http://ghbtns.com/github-btn.html?user=jakiestfu&amp;repo=Snap.js&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="120" height="20"></iframe>
-              </div>
-              <h4>Demos</h4>
-              <ul>
-                <li><a href="default.html">Default</a></li>
-                <li><a href="noDrag.html">No Drag</a></li>
-                <li><a href="dragElement.html">Drag Element</a></li>
-                <li><a href="rightDisabled.html">Right Disabled</a></li>
-                <li><a href="hyperextend.html">Hyperextension Disabled</a></li>
-                <li><a href="skinnyThreshold.html">Skinny Threshold</a></li>
-                <li><a href="toggles.html">Toggles</a></li>
-                <li><a href="classNames.html">Class Names</a></li>
-                <li><a href="expand.html">Expanding</a></li>
-                <li><a href="settings.html">Settings</a></li>
-                <li><a href="ratchet/template.html">Ratchet</a></li>
-              </ul>
-              <div>
-                <p>The Default demo shows basic Snap.js functionality</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non erat ac leo ultrices blandit sed vel risus. Pellentesque facilisis blandit auctor. Maecenas vestibulum vulputate tincidunt. Mauris nec quam libero. Fusce eget ligula non leo varius condimentum quis ac elit. Donec id urna ut neque semper ultrices. Proin ut suscipit felis. Nullam neque felis, ullamcorper scelerisque volutpat vel, vehicula vehicula neque. Aenean scelerisque elit ac erat sagittis ullamcorper.</p>
-              </div>
-            </div>
+            <ul class="ui-listview ui-page-theme-a" data-role="listview">
+              <li><a class="ui-btn" href="#routes">Routes</a></li>
+              <li><a class="ui-btn" href="#routes">Favorites</a></li>
+              <li><a class="ui-btn" href="#routes">Tables</a></li>
+            </ul>
           </div>
           <div class="snap-drawer snap-drawer-right"></div>
         </div>
 
-        <div data-role="page" id="map-page">
-          <div data-role="header">
-            <a href="#" id="sidebar-btn" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"></a>
-            <h1>Insert Page Title Here</h1>
+        <div id="pages">
+          <div data-role="page" id="map">
+
+            <div data-role="header">
+              <a href="#" id="sidebar-btn" class="ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"></a>
+              <h1>Navigator</h1>
+            </div>
+
+            <div data-role="main" class="ui-content" id="map-canvas">
+              
+            </div>
           </div>
 
-          <div data-role="main" class="ui-content" id="map-canvas">
-            
+          <div data-role="page" id="routes">
+
+            <form class="ui-filterable">
+              <input type="number" data-type="search" id="filterable-input">
+            </form>
+            <ul data-role="listview" data-filter="true" data-input="#filterable-input">
+              <li><a href="#">94</a></li>
+              <li><a href="#">102</a></li>
+              <li><a href="#">280</a></li>
+              <li><a href="#">413</a></li>
+              <li><a href="#">94</a></li>
+              <li><a href="#">102</a></li>
+              <li><a href="#">280</a></li>
+              <li><a href="#">413</a></li>
+              <li><a href="#">94</a></li>
+              <li><a href="#">102</a></li>
+              <li><a href="#">280</a></li>
+              <li><a href="#">413</a></li>
+              <li><a href="#">94</a></li>
+              <li><a href="#">102</a></li>
+              <li><a href="#">280</a></li>
+              <li><a href="#">413</a></li>
+              <li><a href="#">94</a></li>
+              <li><a href="#">102</a></li>
+              <li><a href="#">280</a></li>
+              <li><a href="#">413</a></li>
+              <li><a href="#">94</a></li>
+              <li><a href="#">102</a></li>
+              <li><a href="#">280</a></li>
+              <li><a href="#">413</a></li>
+              <li><a href="#">94</a></li>
+              <li><a href="#">102</a></li>
+              <li><a href="#">280</a></li>
+              <li><a href="#">413</a></li>
+              <li><a href="#">94</a></li>
+              <li><a href="#">102</a></li>
+              <li><a href="#">280</a></li>
+              <li><a href="#">413</a></li>
+            </ul>
+              
+            </div>
           </div>
         </div>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
@@ -60,7 +87,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.js/1.9.3/snap.min.js"></script>
         <script>
         var snapper = new Snap({
-          element: document.getElementById('map-page'),
+          element: document.getElementById('pages'),
           disable: 'right',
           touchToDrag: false
         });
@@ -72,12 +99,22 @@
             snapper.open('left');
           }
         }, false);
-        
+
+        $(document).on("mobileinit", function () {
+          $.mobile.pageContainer = $("#pages");
+        });
+
         /*
          * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
          * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
          */
-        $( document ).on( "pagecreate", "#map-page", function() {
+        $( document ).on( "pagecreate", "#map", function() {
+            $.mobile.pageContainer.pagecontainer({
+              beforechange: function( event, ui ) {
+                snapper.close();
+              }
+            });
+
             var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
             if ( navigator.geolocation ) {
                 function success(pos) {
